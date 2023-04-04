@@ -4,6 +4,12 @@ import java.util.*;
 
 class exString{
     String frase;
+    
+    public String getFraseComparacao(){
+        String fraseComparacao = this.frase.toLowerCase();
+        
+        return fraseComparacao;
+    }
     public void numCaracteres(){
         System.out.println("Número de caracteres: " + frase.length()); 
     }
@@ -12,8 +18,7 @@ class exString{
     }
     public int numVogais(){
         int totalVogais = 0;
-        String fraseComparacao = frase.toLowerCase();
-        
+        String fraseComparacao = getFraseComparacao();        
         for(int i = 0; i < frase.length(); i++){
             if(fraseComparacao.charAt(i) == 'a' || fraseComparacao.charAt(i) == 'e'|| 
                     fraseComparacao.charAt(i) == 'i'|| fraseComparacao.charAt(i) == 'o' || fraseComparacao.charAt(i) == 'u'){ 
@@ -26,7 +31,7 @@ class exString{
     }
     public int numDigitos(){
         int totalDigitos = 0;
-        String fraseComparacao = frase.toLowerCase();
+        String fraseComparacao = getFraseComparacao();
 
         for(int i = 0; i < frase.length(); i++){
             if(fraseComparacao.charAt(i) == '0' || fraseComparacao.charAt(i) == '1'|| 
@@ -42,14 +47,14 @@ class exString{
     }
     
     public void startsEh(){
-        String fraseComparacao = frase.toLowerCase();
+        String fraseComparacao = getFraseComparacao();
 
         if(fraseComparacao.startsWith("é")){ 
             System.out.println("Começa com é"); 
         } else System.out.println("Não começa com é");
     }
     public void endsBonita(){
-        String fraseComparacao = frase.toLowerCase();
+        String fraseComparacao = getFraseComparacao();
         
         if(fraseComparacao.endsWith("bonita")){ 
             System.out.println("Termina com bonita");
