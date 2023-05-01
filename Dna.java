@@ -35,7 +35,7 @@ import java.util.Scanner;
 
 class StringDNA{
     private String DNA;
-    
+    /*Construtor da String*/
     public StringDNA(String dna){
         dna = dna.toUpperCase();
         String encapsulada = "";
@@ -47,19 +47,20 @@ class StringDNA{
         }
         this.DNA = encapsulada;
     }
-    
+    /*String encapsulada*/
     public String paraString(){
         return this.DNA;
     }
-    
+    /*Caractere na posição especifica*/
     public void caractereEm(){
         String dnaUpper = this.DNA.toUpperCase();
         for(int i = 0; i < this.DNA.length(); i++){
             if(dnaUpper.charAt(i) == 'A' || dnaUpper.charAt(i) == 'C' || dnaUpper.charAt(i) == 'G' || dnaUpper.charAt(i) == 'T'){
-                System.out.println("Caractere: " + dnaUpper.charAt(i) + " na posição: " + i);
+                System.out.println("\tCaractere " + dnaUpper.charAt(i) + " na posição: " + i);
             }
         }
     }
+    /*Quantidade de cada caractere e tamanho da string*/
     public void quantidadeCaracteres(){
         int countA = 0;
         int countC = 0;
@@ -81,13 +82,13 @@ class StringDNA{
             }
         }
         
-        System.out.println("Quantidade de A's: " + countA);
-        System.out.println("Quantidade de C's: " + countC);
-        System.out.println("Quantidade de G's: " + countG);
-        System.out.println("Quantidade de T's: " + countT);
-        System.out.println("Tamanho da String encapsulada: " + dnaUpper.length());
+        System.out.println("\tQuantidade de A's: " + countA);
+        System.out.println("\tQuantidade de C's: " + countC);
+        System.out.println("\tQuantidade de G's: " + countG);
+        System.out.println("\tQuantidade de T's: " + countT);
+        System.out.println("\tTamanho da String encapsulada: " + dnaUpper.length());
     }
-    
+    /* Inverso do String Dna e troca de letras para o complementar*/
     public void reversoComplementar(){
         String dnaUpper = this.DNA.toUpperCase();
         String invertida = "";
@@ -111,9 +112,9 @@ class StringDNA{
             }
         }
         
-        System.out.println("String complementar invertida: " + complementar);
+        System.out.println("[ String complementar invertida: " + complementar + ']');
     }
-    
+    /*Comparação entre o Dna e a String de Comparação*/
     public int comparacao(String dnaComparacao){
         int acumulador = 0;
         String dnaUpper = this.DNA.toUpperCase();
@@ -145,14 +146,22 @@ public class Projeto1 {
         
         StringDNA Dna = new StringDNA(dna);
         
-        System.out.println(Dna.paraString());
+        System.out.println("[ DNA informado: " + Dna.paraString() + ']');
+        System.out.print("---------------------------------------\n");
+        System.out.println("\t CARACTERES E POSIÇÃO");
+        System.out.print("---------------------------------------\n");
         Dna.caractereEm();
-        Dna.quantidadeCaracteres();
+        System.out.print("---------------------------------------\n");
+        
+        System.out.println("\tQUANTIDADE DE CARACTERES");
+        System.out.print("---------------------------------------\n");
+        Dna.quantidadeCaracteres();        
+        System.out.print("---------------------------------------\n");
         Dna.reversoComplementar();
         
         System.out.print("Informe o DNA para comparação: ");
         String dnaComparacao = scan.nextLine();
         
-        System.out.println("O resultado: " +  Dna.comparacao(dnaComparacao));
+        System.out.println("[ A pontuação: " +  Dna.comparacao(dnaComparacao) + ']');
     }
 }
